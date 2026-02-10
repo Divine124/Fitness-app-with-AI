@@ -12,20 +12,7 @@
 	<artifactId>activityservice</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>activityservice</name>
-	<description>Demo project for Spring Boot</description>
-	<url/>
-	<licenses>
-		<license/>
-	</licenses>
-	<developers>
-		<developer/>
-	</developers>
-	<scm>
-		<connection/>
-		<developerConnection/>
-		<tag/>
-		<url/>
-	</scm>
+	<description>Activity tracking service — stores and retrieves user fitness activities (MongoDB, RabbitMQ).</description>
 	<properties>
 		<java.version>23</java.version>
 		<spring-cloud.version>2024.0.0</spring-cloud.version>

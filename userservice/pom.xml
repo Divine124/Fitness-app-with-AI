@@ -19,7 +19,7 @@
 	<artifactId>userservice</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>userservice</name>
-	<description>User Service for Fitness Microservices</description>
+	<description>User registration and profile service for the fitness app (PostgreSQL).</description>
 
 	<!-- Properties -->
 	<properties>

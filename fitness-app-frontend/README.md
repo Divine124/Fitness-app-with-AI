@@ -1,12 +1,29 @@
-# React + Vite
+# Fitness App — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React single-page application for the fitness tracking platform. Handles login via Keycloak (OAuth2 PKCE), activity listing and creation, and AI-backed recommendations.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React 19** + **Vite** — Build and dev server
+- **Redux Toolkit** — Client state and API caching
+- **Material UI (MUI)** — Components and theming
+- **React Router** — In-app navigation
+- **Axios** — HTTP client to the API gateway
+- **react-oauth2-code-pkce** — Keycloak login flow
 
-## Expanding the ESLint configuration
+## Scripts
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+| Command      | Description              |
+|-------------|--------------------------|
+| `npm run dev`     | Start dev server (Vite)  |
+| `npm run build`   | Production build         |
+| `npm run preview` | Preview production build |
+| `npm run lint`    | Run ESLint               |
+
+## Setup
+
+1. Install dependencies: `npm install`
+2. Ensure the API gateway and Keycloak URLs in `src/authConfig.js` (and any env or config) match your backend.
+3. Run `npm run dev` and open the URL shown in the terminal.
+
+The app assumes the gateway is running and Keycloak is configured for the same origin or allowed redirect URIs.
