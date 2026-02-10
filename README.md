@@ -1,6 +1,6 @@
-# Fitness App — Microservices
+# PulseStack — Microservices
 
-A full-stack fitness tracking application with AI-powered recommendations. Users can log workouts, view activity history, and get personalized suggestions via an AI service.
+A full-stack activity hub with AI-powered recommendations. Log workouts, view your history, and get personalized suggestions—built as a microservices stack with Eureka, Config Server, and an API gateway.
 
 ## Architecture
 

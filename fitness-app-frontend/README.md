@@ -1,6 +1,6 @@
-# Fitness App — Frontend
+# PulseStack — Frontend
 
-React single-page application for the fitness tracking platform. Handles login via Keycloak (OAuth2 PKCE), activity listing and creation, and AI-backed recommendations.
+React single-page application for PulseStack. Keycloak (OAuth2 PKCE) login, activity listing and creation, and AI-backed recommendations.
 
 ## Stack
 

@@ -2,15 +2,15 @@ import { Box, Button, Typography } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "react-oauth2-code-pkce";
 import { useDispatch } from "react-redux";
-import { BrowserRouter as Router, Navigate, Route, Routes, useLocation } from "react-router";
+import { BrowserRouter as Router, Navigate, Route, Routes } from "react-router";
 import { setCredentials } from "./store/authSlice";
 import ActivityForm from "./components/ActivityForm";
 import ActivityList from "./components/ActivityList";
 import ActivityDetail from "./components/ActivityDetail";
 
-const ActvitiesPage = () => {
-  return (<Box sx={{ p: 2, border: '1px dashed grey' }}>
-    <ActivityForm onActivitiesAdded = {() => window.location.reload()} />
+const ActivitiesPage = () => {
+  return (<Box sx={{ p: 2 }}>
+    <ActivityForm onActivityAdded={() => window.location.reload()} />
     <ActivityList />
   </Box>);
 }
@@ -40,16 +40,14 @@ function App() {
         textAlign: "center",
       }}
     >
-      <Typography variant="h4" gutterBottom>
-        Welcome to the Fitness Tracker App
+      <Typography variant="h4" gutterBottom sx={{ fontWeight: 700, letterSpacing: '-0.02em' }}>
+        PulseStack
       </Typography>
-      <Typography variant="subtitle1" sx={{ mb: 3 }}>
-        Please login to access your activities
+      <Typography variant="subtitle1" sx={{ mb: 3, opacity: 0.85 }}>
+        Your activity hub. Sign in to log workouts and get AI recommendations.
       </Typography>
-      <Button variant="contained" color="primary" size="large" onClick={() => {
-                logIn();
-              }}>
-        LOGIN
+      <Button variant="contained" color="primary" size="large" onClick={() => logIn()} sx={{ textTransform: 'none', px: 3, py: 1.5 }}>
+        Sign in
       </Button>
     </Box>
             ) : (
@@ -60,15 +58,16 @@ function App() {
 
              
 
-              <Box sx={{ p: 2, border: '1px dashed grey' }}>
-                 <Button variant="contained" color="secondary" onClick={logOut}>
-                  Logout
-                </Button>
+              <Box sx={{ p: 2 }}>
+                <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
+                  <Typography variant="h6" sx={{ fontWeight: 700, letterSpacing: '-0.02em' }}>PulseStack</Typography>
+                  <Button variant="outlined" size="small" onClick={logOut}>Logout</Button>
+                </Box>
               <Routes>
-                <Route path="/activities" element={<ActvitiesPage />}/>
+                <Route path="/activities" element={<ActivitiesPage />}/>
                 <Route path="/activities/:id" element={<ActivityDetail />}/>
 
-                <Route path="/" element={token ? <Navigate to="/activities" replace/> : <div>Welcome! Please Login.</div>} />
+                <Route path="/" element={token ? <Navigate to="/activities" replace/> : <Typography>Welcome! Please sign in.</Typography>} />
               </Routes>
             </Box>
             )}
