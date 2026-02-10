@@ -75,4 +75,4 @@ Frontend talks to the gateway; the gateway syncs users with Keycloak and forward
 
 ## Configuration
 
-Service-specific settings (databases, RabbitMQ, Keycloak, Eureka, etc.) live in `configserver/src/main/resources/config/` and in each module’s `application.yml`. Point them at your own instances for local or deployed runs.
+
